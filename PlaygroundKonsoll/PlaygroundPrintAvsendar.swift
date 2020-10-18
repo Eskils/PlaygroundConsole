@@ -1,0 +1,131 @@
+
+//  PlaygroundPrint.swift
+//  Eskil Gjerde Sviggum – 2020
+
+import Foundation
+
+protocol Sendable: Codable {
+    func enkodMelding() -> Data
+}
+
+public enum KonsollKomando: String, Codable, Sendable {
+    case tøm, skrollingPå, skrollingAv, forfriskTema
+    
+    func enkodMelding() -> Data {
+        let koda = try! JSONEncoder().encode(self)
+        return koda
+    }
+}
+
+public struct Melding: Codable, Sendable, Equatable {
+    var melding: String
+    var timestamp: Double = Date().timeIntervalSince1970
+    var id: Int = Int.random(in: 0..<10)
+    
+    func sortid() -> Int {
+        return Int((timestamp + (Double(id % 10) * 0.0001)) * 1000)
+    }
+    
+    func enkodMelding() -> Data {
+        let enkod = try! JSONEncoder().encode(self)
+        return enkod
+    }
+}
+
+public class PPAvsendar {
+    
+    private var hostUrl: URL
+    
+    public init(url: URL) {
+        hostUrl = url
+    }
+    
+    var sendteMeldingar: Int = 0
+    //FIFO!!!
+    var sendeStack: [(Sendable, (()->Void)?)] = []
+    public func send(melding: String, completion: (()->Void)?=nil) {
+        
+        let data = Melding(melding: melding, id: sendteMeldingar)
+        sendteMeldingar += 1
+        sendeStack.append((data,completion))
+        
+        if !drivMedSending {
+            if sendeStack.count == 0 { return }
+            faktiskSend(sendeStack.removeFirst())
+        }
+    }
+    
+    public func send(kommando: KonsollKomando, completion: (()->Void)?=nil) {
+        
+        let data = kommando
+        sendteMeldingar += 1
+        sendeStack.append((data,completion))
+        
+        if !drivMedSending {
+            if sendeStack.count == 0 { return }
+            faktiskSend(sendeStack.removeFirst())
+        }
+    }
+    
+    var drivMedSending: Bool = false
+    func faktiskSend(_ mld: (Sendable,(()->Void)?)) {
+        drivMedSending = true
+        var req = URLRequest(url: hostUrl)
+        req.httpMethod = "POST"
+        req.httpBody = mld.0.enkodMelding()
+        URLSession(configuration: URLSessionConfiguration.ephemeral).dataTask(with: req, completionHandler: { (_,_,_) in
+            mld.1?()
+            if !self.sendeStack.isEmpty {
+                let nyMld = self.sendeStack.removeFirst()
+                self.faktiskSend(nyMld)
+            }else {
+                self.drivMedSending = false
+            }
+        }).resume()
+    }
+}
+
+public func pprintKonfig(konsolladresse: String) {
+    let url = URL(string: konsolladresse)!
+    avsendar = PPAvsendar(url: url)
+}
+
+private var avsendar: PPAvsendar = PPAvsendar(url: URL(string: "http://localhost")!)
+
+/*public func pprint(_ string: String) {
+ if avsendar == nil { return }
+ DispatchQueue.global().async {
+ avsendar.send(melding: string)
+ }
+ }*/
+
+public func pprint(_ els: Any..., wait: Bool = true) {
+    if avsendar == nil { return }
+    var finished: Bool = false
+    var str = ""
+    for el in els {
+        str += "\(el) "
+    }
+    str.removeLast()
+    DispatchQueue.global().async {
+        avsendar.send(melding: str) {
+            finished = true
+        }
+    }
+    
+    if !wait { return }
+    while !finished { }
+}
+
+public func pkonsoll(kommando: KonsollKomando, wait: Bool = true) {
+    if avsendar == nil { return }
+    var finished: Bool = false
+    DispatchQueue.global().async {
+        avsendar.send(kommando: kommando) {
+            finished = true
+        }
+    }
+    
+    if !wait { return }
+    while !finished { }
+}

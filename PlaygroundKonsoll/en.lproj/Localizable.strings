@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  PlaygroundKonsoll
+
+  Created by Eskil Sviggum on 18/10/2020.
+  
+*/
+
+"See instructions" = "See instructions";
+"Konsoll aktiv på" = "Active on";
+"Inaktiv" = "Inactive";
+"Søk" = "Search";
+"Fann ingen celler med" = "Could not find any cells with";
+
+
+"Rensk konsoll" = "Clean console";
+"Kopier adresse" = "Copy address";
+"Skru av/på sanntidsscrolling" = "Toggle scrolling";
+"Vel ein handling" = "Choose an action";
+"Avbryt" = "Cancle";
+
+"Instructions" = "Instructions";
+"Copy code (tap)" = "Copy code (tap)";
+"Paste to a module in “Playgrounds”" = "Paste to a module in “Playgrounds”";
+"Import & `pprint`" = "Import & `pprint`";
+
+"Settings" = "Preferences";
+"Language" = "Language";
+"Style" = "Style";
+
+"Copied!" = "Copied!";
+
+"Start appen på nytt for endringane til å tre i kraft" = "Restart the app for the changes to take effect.";
+"Ok" = "Okey";

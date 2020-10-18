@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KonsollKontroller" customModule="PlaygroundKonsoll" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSeparator" destination="hor-tp-sr1" id="lDT-tm-r0h"/>
+                <outlet property="instructionsView" destination="HsI-dd-DY6" id="gm6-BY-b9o"/>
+                <outlet property="intructionsKnapp" destination="K6S-Aw-Cub" id="6Sz-rc-xB9"/>
+                <outlet property="sanntidsscrollToggle" destination="b42-t0-th9" id="wIt-cC-fdC"/>
+                <outlet property="settingsKnapp" destination="9gu-O8-yKZ" id="EqE-Er-wEV"/>
+                <outlet property="startKonsollKnapp" destination="mgx-vD-x0k" id="fgp-Pu-rjI"/>
+                <outlet property="statusLabel" destination="FHc-w8-CnX" id="KwI-UM-ffj"/>
+                <outlet property="søkefelt" destination="nTA-7V-RTP" id="prM-Rw-Za0"/>
+                <outlet property="tableView" destination="2M9-gI-qGO" id="eEg-Oc-sxz"/>
+                <outlet property="topSeparator" destination="QGr-r2-ndX" id="d9P-cX-aAq"/>
+                <outlet property="tømKnapp" destination="gGN-YY-wOu" id="wEL-zi-0NG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2M9-gI-qGO">
+                    <rect key="frame" x="8" y="42" width="1008" height="1314"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHc-w8-CnX">
+                    <rect key="frame" x="16" y="8" width="921" height="26"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGN-YY-wOu">
+                    <rect key="frame" x="703" y="4" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="U6a-3p-Bl2"/>
+                        <constraint firstAttribute="width" secondItem="gGN-YY-wOu" secondAttribute="height" multiplier="1:1" id="ods-tu-iqC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                    <state key="normal" image="trash" catalog="system"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tint">
+                            <color key="value" name="AccentColor"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="background">
+                            <color key="value" name="ConsoleBack"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="backgroundIsOpaque" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgx-vD-x0k" customClass="IkonifisertToggleKnapp" customModule="PlaygroundKonsoll" customModuleProvider="target">
+                    <rect key="frame" x="978" y="4" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="M1Z-Wl-cNt"/>
+                        <constraint firstAttribute="width" secondItem="mgx-vD-x0k" secondAttribute="height" multiplier="1:1" id="rhb-xR-vz3"/>
+                    </constraints>
+                    <color key="tintColor" name="AccentColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="offImage" value="play.fill" catalog="system"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="onImage" value="stop.fill" catalog="system"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="backgroundIsOpaque" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTA-7V-RTP" customClass="KollapsbartTekstfelt" customModule="PlaygroundKonsoll" customModuleProvider="target">
+                    <rect key="frame" x="737" y="4" width="200" height="30"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="jH9-lz-Eld"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="icon" value="magnifyingglass" catalog="system"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Søk"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="expandableWidth">
+                            <real key="value" value="300"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="image" keyPath="closeIcon" value="xmark" catalog="system"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b42-t0-th9" customClass="ToggleKnapp" customModule="PlaygroundKonsoll" customModuleProvider="target">
+                    <rect key="frame" x="945" y="6.5" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="b42-t0-th9" secondAttribute="height" multiplier="1:1" id="bGE-GF-GZD"/>
+                        <constraint firstAttribute="width" constant="25" id="per-as-GcL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                    <state key="normal" image="arrow.down.right" catalog="system"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tint">
+                            <color key="value" name="AccentColor"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="background">
+                            <color key="value" name="ConsoleBack"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="backgroundIsOpaque" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <progressView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QGr-r2-ndX">
+                    <rect key="frame" x="16" y="42" width="992" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="LLY-tc-fdL"/>
+                    </constraints>
+                    <color key="progressTintColor" systemColor="systemOrangeColor"/>
+                    <color key="trackTintColor" systemColor="systemOrangeColor"/>
+                </progressView>
+                <progressView hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hor-tp-sr1">
+                    <rect key="frame" x="16" y="1356" width="992" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="ROs-cF-QLg"/>
+                    </constraints>
+                    <color key="progressTintColor" systemColor="linkColor"/>
+                    <color key="trackTintColor" systemColor="systemIndigoColor"/>
+                </progressView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gu-O8-yKZ">
+                    <rect key="frame" x="674" y="8" width="21" height="22"/>
+                    <state key="normal" image="gearshape" catalog="system"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HsI-dd-DY6" customClass="InstructionsCelle" customModule="PlaygroundKonsoll" customModuleProvider="target">
+                    <rect key="frame" x="392" y="563" width="240" height="240"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="dUP-Z9-qmE"/>
+                        <constraint firstAttribute="width" secondItem="HsI-dd-DY6" secondAttribute="height" multiplier="1:1" id="th3-vH-UAY"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="ikon" value="PKInstructsIcon"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6S-Aw-Cub">
+                    <rect key="frame" x="419" y="5" width="25" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="K6S-Aw-Cub" secondAttribute="height" multiplier="1:1" id="2wv-G1-yUw"/>
+                        <constraint firstAttribute="width" constant="30" id="Z2W-fW-7nh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                    <state key="normal" image="PKInstructsIcon"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tint">
+                            <color key="value" name="AccentColor"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="background">
+                            <color key="value" name="ConsoleBack"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="backgroundIsOpaque" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="ConsoleBack"/>
+            <constraints>
+                <constraint firstItem="QGr-r2-ndX" firstAttribute="top" secondItem="mgx-vD-x0k" secondAttribute="bottom" constant="8" id="0fs-3m-sEY"/>
+                <constraint firstItem="9gu-O8-yKZ" firstAttribute="centerY" secondItem="gGN-YY-wOu" secondAttribute="centerY" id="5uS-2n-tbt"/>
+                <constraint firstItem="2M9-gI-qGO" firstAttribute="top" secondItem="FHc-w8-CnX" secondAttribute="bottom" constant="8" id="603-Bl-Z9E"/>
+                <constraint firstItem="nTA-7V-RTP" firstAttribute="leading" secondItem="gGN-YY-wOu" secondAttribute="trailing" constant="4" id="6Xu-No-z4T"/>
+                <constraint firstItem="gGN-YY-wOu" firstAttribute="width" secondItem="gGN-YY-wOu" secondAttribute="height" multiplier="1:1" id="6ps-LY-v2K"/>
+                <constraint firstItem="QGr-r2-ndX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="6q2-WW-NG3"/>
+                <constraint firstItem="mgx-vD-x0k" firstAttribute="top" secondItem="FHc-w8-CnX" secondAttribute="bottom" constant="8" id="B5I-XG-2Fd"/>
+                <constraint firstItem="gGN-YY-wOu" firstAttribute="centerY" secondItem="K6S-Aw-Cub" secondAttribute="centerY" id="BUg-UC-7tR"/>
+                <constraint firstItem="HsI-dd-DY6" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="BXa-Xc-pEk"/>
+                <constraint firstItem="b42-t0-th9" firstAttribute="leading" secondItem="FHc-w8-CnX" secondAttribute="trailing" constant="8" id="Bfd-mT-BeP"/>
+                <constraint firstItem="b42-t0-th9" firstAttribute="centerY" secondItem="mgx-vD-x0k" secondAttribute="centerY" id="CZc-IA-vRy"/>
+                <constraint firstItem="b42-t0-th9" firstAttribute="leading" secondItem="nTA-7V-RTP" secondAttribute="trailing" constant="8" id="Cca-f0-5Qp"/>
+                <constraint firstItem="HsI-dd-DY6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Ehi-xx-buK"/>
+                <constraint firstItem="K6S-Aw-Cub" firstAttribute="centerY" secondItem="nTA-7V-RTP" secondAttribute="centerY" id="FaG-OH-fVy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mgx-vD-x0k" secondAttribute="trailing" constant="16" id="FmO-eD-ZyP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hor-tp-sr1" secondAttribute="bottom" constant="8" id="FqQ-Ha-7mO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hor-tp-sr1" secondAttribute="trailing" constant="16" id="HXT-lM-gMM"/>
+                <constraint firstItem="K6S-Aw-Cub" firstAttribute="width" secondItem="K6S-Aw-Cub" secondAttribute="height" multiplier="1:1" id="Iqz-Bn-g3H"/>
+                <constraint firstItem="gGN-YY-wOu" firstAttribute="width" secondItem="gGN-YY-wOu" secondAttribute="height" multiplier="1:1" id="M6X-lC-Nyw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="2M9-gI-qGO" secondAttribute="bottom" constant="10" id="N0y-fO-Bv8"/>
+                <constraint firstItem="2M9-gI-qGO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Pz3-MH-1C6"/>
+                <constraint firstItem="nTA-7V-RTP" firstAttribute="centerY" secondItem="b42-t0-th9" secondAttribute="centerY" id="Qbo-bs-bTn"/>
+                <constraint firstItem="mgx-vD-x0k" firstAttribute="centerY" secondItem="FHc-w8-CnX" secondAttribute="centerY" id="SEZ-gL-FZh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FHc-w8-CnX" secondAttribute="trailing" constant="16" id="Ztt-NS-UbY"/>
+                <constraint firstItem="FHc-w8-CnX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="a2N-mn-znx"/>
+                <constraint firstItem="mgx-vD-x0k" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="4" id="c7O-S1-ycg"/>
+                <constraint firstItem="mgx-vD-x0k" firstAttribute="leading" secondItem="b42-t0-th9" secondAttribute="trailing" constant="8" symbolic="YES" id="fiC-DD-Jmg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2M9-gI-qGO" secondAttribute="trailing" constant="8" id="gyo-0f-a3t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QGr-r2-ndX" secondAttribute="trailing" constant="16" id="iEi-BP-FEP"/>
+                <constraint firstItem="K6S-Aw-Cub" firstAttribute="trailing" secondItem="9gu-O8-yKZ" secondAttribute="leading" constant="-8" id="iQS-xx-LVa"/>
+                <constraint firstItem="FHc-w8-CnX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="kOq-rE-tTP"/>
+                <constraint firstItem="gGN-YY-wOu" firstAttribute="leading" secondItem="9gu-O8-yKZ" secondAttribute="trailing" constant="8" id="mfg-gB-7W8"/>
+                <constraint firstItem="hor-tp-sr1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="olL-w3-gd9"/>
+                <constraint firstItem="2M9-gI-qGO" firstAttribute="top" secondItem="mgx-vD-x0k" secondAttribute="bottom" constant="8" id="zwz-hW-85l"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Ztt-NS-UbY"/>
+                    <exclude reference="B5I-XG-2Fd"/>
+                    <exclude reference="SEZ-gL-FZh"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="constraints">
+                    <include reference="Ztt-NS-UbY"/>
+                    <exclude reference="603-Bl-Z9E"/>
+                    <exclude reference="Bfd-mT-BeP"/>
+                    <include reference="B5I-XG-2Fd"/>
+                    <exclude reference="c7O-S1-ycg"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="-18.75" y="132"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="b42-t0-th9">
+            <size key="intrinsicContentSize" width="15.5" height="30"/>
+        </designable>
+        <designable name="mgx-vD-x0k">
+            <size key="intrinsicContentSize" width="18.5" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="PKInstructsIcon" width="512" height="512"/>
+        <image name="arrow.down.right" catalog="system" width="128" height="111"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="stop.fill" catalog="system" width="128" height="113"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ConsoleBack">
+            <color red="0.0" green="0.019999999552965164" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

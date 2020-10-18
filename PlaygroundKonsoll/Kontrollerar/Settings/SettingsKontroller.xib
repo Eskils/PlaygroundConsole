@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsKontroller" customModule="PlaygroundKonsoll" customModuleProvider="target">
+            <connections>
+                <outlet property="languageLabel" destination="OGi-In-N9k" id="cdg-k3-asW"/>
+                <outlet property="languagePicker" destination="oa2-iJ-Mdk" id="al3-ww-Mw3"/>
+                <outlet property="lukkKnapp" destination="qDw-kO-RJX" id="eut-uH-2Xe"/>
+                <outlet property="separator" destination="VlO-kZ-Ho5" id="wDc-EA-1S3"/>
+                <outlet property="settingsLabel" destination="aGU-k1-tOW" id="B58-6R-6C9"/>
+                <outlet property="styleLabel" destination="PZ7-JU-CIw" id="QzB-Sp-FqA"/>
+                <outlet property="stylePicker" destination="6pa-5F-FzI" id="9ax-g4-Rr5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGU-k1-tOW">
+                    <rect key="frame" x="20" y="52" width="374" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    <color key="textColor" systemColor="systemOrangeColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VlO-kZ-Ho5">
+                    <rect key="frame" x="20" y="93" width="374" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="UTl-9Q-4AC"/>
+                    </constraints>
+                    <color key="trackTintColor" systemColor="systemOrangeColor"/>
+                </progressView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDw-kO-RJX">
+                    <rect key="frame" x="361" y="52" width="33" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="qDw-kO-RJX" secondAttribute="height" multiplier="1:1" id="Ec1-nV-9jn"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemOrangeColor"/>
+                    <state key="normal">
+                        <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGi-In-N9k">
+                    <rect key="frame" x="20" y="103" width="374" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" systemColor="systemOrangeColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oa2-iJ-Mdk" customClass="PickerView" customModule="PlaygroundKonsoll" customModuleProvider="target">
+                    <rect key="frame" x="20" y="132" width="374" height="128"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6pa-5F-FzI" customClass="PickerView" customModule="PlaygroundKonsoll" customModuleProvider="target">
+                    <rect key="frame" x="20" y="297" width="374" height="128"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZ7-JU-CIw">
+                    <rect key="frame" x="20" y="268" width="374" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" systemColor="systemOrangeColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="ConsoleBack"/>
+            <constraints>
+                <constraint firstItem="PZ7-JU-CIw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4Su-LW-amn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OGi-In-N9k" secondAttribute="trailing" constant="20" id="4xN-uO-clf"/>
+                <constraint firstItem="qDw-kO-RJX" firstAttribute="top" secondItem="aGU-k1-tOW" secondAttribute="top" id="79X-xP-ZIw"/>
+                <constraint firstItem="6pa-5F-FzI" firstAttribute="top" secondItem="PZ7-JU-CIw" secondAttribute="bottom" constant="8" symbolic="YES" id="9Pd-iN-jaZ"/>
+                <constraint firstItem="qDw-kO-RJX" firstAttribute="width" secondItem="qDw-kO-RJX" secondAttribute="height" multiplier="1:1" id="Arc-bi-ses"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6pa-5F-FzI" secondAttribute="trailing" constant="20" id="COm-rn-ahU"/>
+                <constraint firstItem="6pa-5F-FzI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="DzW-rj-pU8"/>
+                <constraint firstItem="oa2-iJ-Mdk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="II1-0T-XFc"/>
+                <constraint firstItem="PZ7-JU-CIw" firstAttribute="top" secondItem="oa2-iJ-Mdk" secondAttribute="bottom" constant="8" symbolic="YES" id="NBJ-aP-JK3"/>
+                <constraint firstItem="oa2-iJ-Mdk" firstAttribute="top" secondItem="OGi-In-N9k" secondAttribute="bottom" constant="8" symbolic="YES" id="Yds-3d-dHm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aGU-k1-tOW" secondAttribute="trailing" constant="20" id="ZV7-Dl-OdZ"/>
+                <constraint firstItem="qDw-kO-RJX" firstAttribute="centerY" secondItem="aGU-k1-tOW" secondAttribute="centerY" id="eDS-aV-N5d"/>
+                <constraint firstItem="aGU-k1-tOW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eaE-IS-38V"/>
+                <constraint firstItem="VlO-kZ-Ho5" firstAttribute="leading" secondItem="aGU-k1-tOW" secondAttribute="leading" id="jEg-hL-cgH"/>
+                <constraint firstItem="OGi-In-N9k" firstAttribute="top" secondItem="VlO-kZ-Ho5" secondAttribute="bottom" constant="8" symbolic="YES" id="lRZ-t6-cVx"/>
+                <constraint firstItem="qDw-kO-RJX" firstAttribute="trailing" secondItem="aGU-k1-tOW" secondAttribute="trailing" id="laT-Di-z3j"/>
+                <constraint firstItem="aGU-k1-tOW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="oms-8B-Jz0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PZ7-JU-CIw" secondAttribute="trailing" constant="20" id="pys-Sy-EI2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oa2-iJ-Mdk" secondAttribute="trailing" constant="20" id="qZA-fF-cNy"/>
+                <constraint firstItem="VlO-kZ-Ho5" firstAttribute="trailing" secondItem="aGU-k1-tOW" secondAttribute="trailing" id="s4g-Wf-bYc"/>
+                <constraint firstItem="OGi-In-N9k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="uZz-8L-Xw0"/>
+                <constraint firstItem="qDw-kO-RJX" firstAttribute="bottom" secondItem="aGU-k1-tOW" secondAttribute="bottom" id="wXm-36-gWm"/>
+                <constraint firstItem="VlO-kZ-Ho5" firstAttribute="top" secondItem="aGU-k1-tOW" secondAttribute="bottom" constant="8" symbolic="YES" id="z8X-c0-1UD"/>
+            </constraints>
+            <point key="canvasLocation" x="95.652173913043484" y="131.91964285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="ConsoleBack">
+            <color red="0.0" green="0.019999999552965164" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

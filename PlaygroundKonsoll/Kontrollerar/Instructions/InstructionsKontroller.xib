@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InstructionsKontroller" customModule="PlaygroundKonsoll" customModuleProvider="target">
+            <connections>
+                <outlet property="instructCelleAddModule" destination="qhd-E2-haE" id="h6R-QO-fuT"/>
+                <outlet property="instructCelleCopyCode" destination="luE-Ae-dVo" id="aoR-G6-1GI"/>
+                <outlet property="instructCelleImportAndPprint" destination="sOQ-Ua-Cib" id="jam-FH-H9Z"/>
+                <outlet property="instructsLabel" destination="aPb-Sx-Eir" id="5ox-iY-lQm"/>
+                <outlet property="lukkKnapp" destination="dsf-Jq-51C" id="Yxx-tP-NnT"/>
+                <outlet property="separator" destination="dC1-mJ-ao5" id="r6C-Lb-EjW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPb-Sx-Eir">
+                    <rect key="frame" x="20" y="52" width="374" height="32.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    <color key="textColor" systemColor="systemOrangeColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsf-Jq-51C">
+                    <rect key="frame" x="361.5" y="52" width="32.5" height="32.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dsf-Jq-51C" secondAttribute="height" multiplier="1:1" id="YzN-yj-T5S"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemOrangeColor"/>
+                    <state key="normal">
+                        <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                    </state>
+                </button>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dC1-mJ-ao5">
+                    <rect key="frame" x="20" y="92.5" width="374" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="hIg-LT-XgD"/>
+                    </constraints>
+                    <color key="trackTintColor" systemColor="systemOrangeColor"/>
+                </progressView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pyd-WB-HbR">
+                    <rect key="frame" x="20" y="89" width="374" height="773"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="luE-Ae-dVo" customClass="InstructCelle" customModule="PlaygroundKonsoll" customModuleProvider="target">
+                            <rect key="frame" x="8" y="15" width="358" height="128"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="ikon" value="CCodePKInstruct2.jpg"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="Copy code (tap)"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhd-E2-haE" customClass="InstructCelle" customModule="PlaygroundKonsoll" customModuleProvider="target">
+                            <rect key="frame" x="8" y="151" width="358" height="128"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="ikon" value="MModPKInstruct2.jpg"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="Paste to a module in “Playgrounds”"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOQ-Ua-Cib" customClass="InstructCelle" customModule="PlaygroundKonsoll" customModuleProvider="target">
+                            <rect key="frame" x="8" y="287" width="358" height="128"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="ikon" value="IaPPKInstruct.jpg"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="Import &amp; `pprint`"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="qhd-E2-haE" firstAttribute="top" secondItem="luE-Ae-dVo" secondAttribute="bottom" constant="8" symbolic="YES" id="1N0-n8-pyg"/>
+                        <constraint firstItem="luE-Ae-dVo" firstAttribute="leading" secondItem="Pyd-WB-HbR" secondAttribute="leading" constant="8" id="6q6-Pe-RR7"/>
+                        <constraint firstItem="luE-Ae-dVo" firstAttribute="width" secondItem="Pyd-WB-HbR" secondAttribute="width" constant="-16" id="9gj-Qh-7FL"/>
+                        <constraint firstAttribute="trailing" secondItem="qhd-E2-haE" secondAttribute="trailing" constant="8" id="G8p-K4-eOJ"/>
+                        <constraint firstAttribute="bottom" secondItem="sOQ-Ua-Cib" secondAttribute="bottom" constant="8" id="K5h-aA-q6z"/>
+                        <constraint firstItem="qhd-E2-haE" firstAttribute="width" secondItem="Pyd-WB-HbR" secondAttribute="width" constant="-16" id="QNb-w9-Ayq"/>
+                        <constraint firstItem="sOQ-Ua-Cib" firstAttribute="top" secondItem="qhd-E2-haE" secondAttribute="bottom" constant="8" symbolic="YES" id="VK6-T5-Tvi"/>
+                        <constraint firstItem="luE-Ae-dVo" firstAttribute="top" secondItem="Pyd-WB-HbR" secondAttribute="top" constant="8" id="VRq-tR-zqD"/>
+                        <constraint firstAttribute="trailing" secondItem="luE-Ae-dVo" secondAttribute="trailing" constant="8" id="WE7-jn-qCt"/>
+                        <constraint firstItem="qhd-E2-haE" firstAttribute="leading" secondItem="Pyd-WB-HbR" secondAttribute="leading" constant="8" id="bhW-8E-PwN"/>
+                        <constraint firstItem="sOQ-Ua-Cib" firstAttribute="width" secondItem="Pyd-WB-HbR" secondAttribute="width" constant="-16" id="kaP-TM-CUU"/>
+                        <constraint firstItem="sOQ-Ua-Cib" firstAttribute="leading" secondItem="Pyd-WB-HbR" secondAttribute="leading" constant="8" id="nME-zs-EUG"/>
+                        <constraint firstAttribute="trailing" secondItem="sOQ-Ua-Cib" secondAttribute="trailing" constant="8" id="nbk-g8-dxs"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="a4A-f2-TXx"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="bxb-av-GmT"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="ConsoleBack"/>
+            <constraints>
+                <constraint firstItem="dsf-Jq-51C" firstAttribute="bottom" secondItem="aPb-Sx-Eir" secondAttribute="bottom" id="2x5-fV-TAl"/>
+                <constraint firstItem="dC1-mJ-ao5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="72H-Ra-tLi"/>
+                <constraint firstItem="aPb-Sx-Eir" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="9VL-gp-sab"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dC1-mJ-ao5" secondAttribute="trailing" constant="20" id="CiM-tw-Y1O"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Pyd-WB-HbR" secondAttribute="bottom" id="E9Y-fo-iGy"/>
+                <constraint firstItem="aPb-Sx-Eir" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="EBB-wA-RDS"/>
+                <constraint firstItem="Pyd-WB-HbR" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" constant="-40" id="HyS-dh-uYc"/>
+                <constraint firstItem="dC1-mJ-ao5" firstAttribute="top" secondItem="aPb-Sx-Eir" secondAttribute="bottom" constant="8" symbolic="YES" id="IUL-xN-0ZQ"/>
+                <constraint firstItem="Pyd-WB-HbR" firstAttribute="top" secondItem="dC1-mJ-ao5" secondAttribute="bottom" id="Kr5-Rl-eFR"/>
+                <constraint firstItem="dsf-Jq-51C" firstAttribute="centerY" secondItem="aPb-Sx-Eir" secondAttribute="centerY" id="PTm-VA-v6v"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aPb-Sx-Eir" secondAttribute="trailing" constant="20" id="Pa5-9D-NPU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pyd-WB-HbR" secondAttribute="trailing" constant="20" id="QD2-UB-aSw"/>
+                <constraint firstItem="dsf-Jq-51C" firstAttribute="trailing" secondItem="aPb-Sx-Eir" secondAttribute="trailing" id="Ufm-nR-7ym"/>
+                <constraint firstItem="Pyd-WB-HbR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="agx-ct-hd9"/>
+                <constraint firstItem="dsf-Jq-51C" firstAttribute="top" secondItem="aPb-Sx-Eir" secondAttribute="top" id="yDB-5A-5hb"/>
+            </constraints>
+            <point key="canvasLocation" x="-46.376811594202906" y="108.48214285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="CCodePKInstruct2.jpg" width="289" height="183"/>
+        <image name="IaPPKInstruct.jpg" width="289" height="183"/>
+        <image name="MModPKInstruct2.jpg" width="289" height="183"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="ConsoleBack">
+            <color red="0.0" green="0.019999999552965164" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

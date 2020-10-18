@@ -1,0 +1,192 @@
+{
+  "images" : [
+    {
+      "filename" : "ios-20@2x.png",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "20x20"
+    },
+    {
+      "filename" : "ios-20@3x.png",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "20x20"
+    },
+    {
+      "filename" : "Icon-29x7.png",
+      "idiom" : "iphone",
+      "scale" : "1x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "ios-29@2x.png",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "ios-29@3x.png",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "ios-40@2x.png",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "ios-40@3x.png",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "ios-60@2x.png",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "60x60"
+    },
+    {
+      "filename" : "ios-60@3x.png",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "60x60"
+    },
+    {
+      "filename" : "ios-20~ipad.png",
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "size" : "20x20"
+    },
+    {
+      "filename" : "ios-20@2x~ipad.png",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "20x20"
+    },
+    {
+      "filename" : "ios-29~ipad.png",
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "ios-29@2x~ipad.png",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "ios-40~ipad.png",
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "ios-40@2x~ipad.png",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "ios-76~ipad.png",
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "size" : "76x76"
+    },
+    {
+      "filename" : "ios-76@2x~ipad.png",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "76x76"
+    },
+    {
+      "filename" : "ios-83@2x~ipad.png",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "83.5x83.5"
+    },
+    {
+      "filename" : "ios~ios-marketing.png",
+      "idiom" : "ios-marketing",
+      "scale" : "1x",
+      "size" : "1024x1024"
+    },
+    {
+      "filename" : "Icon-16~mac.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "16x16",
+      "unassigned" : true
+    },
+    {
+      "filename" : "Icon-16@2x~mac.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "16x16",
+      "unassigned" : true
+    },
+    {
+      "filename" : "Icon-32~mac.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "32x32",
+      "unassigned" : true
+    },
+    {
+      "filename" : "Icon-32@2x~mac.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "32x32",
+      "unassigned" : true
+    },
+    {
+      "filename" : "Icon-128~mac.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "128x128",
+      "unassigned" : true
+    },
+    {
+      "filename" : "Icon-128@2x~mac.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "128x128",
+      "unassigned" : true
+    },
+    {
+      "filename" : "Icon-256~mac.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "256x256",
+      "unassigned" : true
+    },
+    {
+      "filename" : "Icon-256@2x~mac.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "256x256",
+      "unassigned" : true
+    },
+    {
+      "filename" : "Icon-512~mac.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "512x512",
+      "unassigned" : true
+    },
+    {
+      "filename" : "Icon-512@2x~mac.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "512x512",
+      "unassigned" : true
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
