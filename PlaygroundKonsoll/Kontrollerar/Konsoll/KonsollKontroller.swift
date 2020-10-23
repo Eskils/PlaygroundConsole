@@ -314,14 +314,14 @@ class KonsollKontroller: UIViewController, PPMotakarDelegat {
     
     func disableTable() {
         tableView.visibleCells.forEach {
-            ($0 as? PrintCelle)?.label.textColor = .gray
+            ($0 as? PrintCelle)?.grå()
         }
-        tableView.isScrollEnabled = NO
+        tableView.isMultipleTouchEnabled = NO
     }
     
     func activateTable() {
         rensk()
-        tableView.isScrollEnabled = YES
+        tableView.isMultipleTouchEnabled = NO
     }
     
     @objc func startKonsoll() {

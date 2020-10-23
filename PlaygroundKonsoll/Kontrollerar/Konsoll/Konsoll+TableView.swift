@@ -19,6 +19,7 @@ extension KonsollKontroller: UITableViewDelegate, UITableViewDataSource {
         guard let celle = tableView.dequeueReusableCell(withIdentifier: "celle") as? PrintCelle else { fatalError() }
         
         celle.melding = celler[indexPath.row]
+        celle.erGrå = self.status == .Inaktiv
         celle.stil = CellstyleManager.manager(forStyle: stil)
         
         return celle

@@ -13,11 +13,18 @@ class PrintCelle: UITableViewCell {
     @IBOutlet var cellemembran: UIView!
     
     var melding: Melding!
-    var farge: UIColor = .label
     
-    var prefix: UIView?
+    var prefix: PrefixView?
     
-    var stil : CellstyleType!
+    var stil : CellstyleType! {
+        didSet {
+            self.oppdaterStiil()
+        }
+    }
+    
+    var erGrå: Bool = NO
+    
+    var labelLeadingConstraint: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,10 +32,14 @@ class PrintCelle: UITableViewCell {
         
         self.backgroundColor = .clear
         self.contentView.backgroundColor = .clear
+        
+        labelLeadingConstraint = label.leadingAnchor.constraint(equalTo: cellemembran.leadingAnchor, constant: 4)
+        labelLeadingConstraint.isActive = YES
     }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
         
         konfig()
     }
@@ -37,40 +48,74 @@ class PrintCelle: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        konfig()
+        //konfig()
     }
     
     func konfig() {
-        self.label.textColor = farge
         self.label.text = melding.melding
         
         stil.style(label: self.label)
         stil.style(backg: cellemembran)
+        
+        if erGrå {
+            self.grå()
+        }
         
         label.translatesAutoresizingMaskIntoConstraints = NO
         NSLayoutConstraint.activate([
             label.centerYAnchor.constraint(equalTo: cellemembran.centerYAnchor),
             label.trailingAnchor.constraint(equalTo: cellemembran.trailingAnchor, constant: -4)
         ])
-        DispatchQueue.main.async { [self] in
-            //self.prefix?.removeFromSuperview()
-            if let p = stil.prefix() {
-                if self.prefix != nil { self.prefix?.isHidden = YES }
-                    self.prefix = p
-                    self.addSubview(self.prefix!)
-                
-                self.prefix?.translatesAutoresizingMaskIntoConstraints = NO
-                NSLayoutConstraint.activate([
-                    self.prefix!.leadingAnchor.constraint(equalTo: cellemembran.leadingAnchor, constant: 4),
-                    self.prefix!.widthAnchor.constraint(lessThanOrEqualToConstant: 30),
-                    self.prefix!.topAnchor.constraint(equalTo: cellemembran.topAnchor),
-                    self.prefix!.bottomAnchor.constraint(equalTo: cellemembran.bottomAnchor),
-                    label.leadingAnchor.constraint(equalTo: self.prefix!.trailingAnchor, constant: 4)
-                ])
-            } else {
-                label.leadingAnchor.constraint(equalTo: cellemembran.leadingAnchor, constant: 4).isActive = YES
-            }
+        DispatchQueue.main.async {
+            self.addPrefixview()
         }
+    }
+    
+    func addPrefixview() {
+        let p = stil.prefix()
+            if self.prefix != nil {
+                //if self.prefix?.view.superview != nil {
+                    self.prefix?.view.removeFromSuperview();
+                //}
+                self.prefix = nil;
+                
+            }//self.prefix?.view.isHidden = YES }
+            self.prefix = p
+        guard let pView = prefix?.view else { labelLeadingConstraint.isActive = YES; return }
+            self.cellemembran.addSubview(pView)
+        
+        labelLeadingConstraint.isActive = NO
+            
+            pView.translatesAutoresizingMaskIntoConstraints = NO
+            NSLayoutConstraint.activate([
+                pView.leadingAnchor.constraint(equalTo: cellemembran.leadingAnchor, constant: 4),
+                pView.widthAnchor.constraint(lessThanOrEqualToConstant: 20),
+                pView.topAnchor.constraint(equalTo: cellemembran.topAnchor),
+                pView.bottomAnchor.constraint(equalTo: cellemembran.bottomAnchor),
+                pView.trailingAnchor.constraint(equalTo: label.leadingAnchor, constant: -4)
+            ])
+    }
+    
+    func oppdaterStiil() {
+        stil.style(label: self.label)
+        stil.style(backg: cellemembran)
+        addPrefixview()
+        
+        if erGrå {
+            self.grå()
+        }
+    }
+    
+    func grå() {
+        let farge = UIColor.systemGray2
+        self.label.textColor = farge
+        self.prefix?.endreFarge(farge)
+        self.erGrå = YES
+    }
+    
+    func avgrå() {
+        self.erGrå = NO
+        konfig()
     }
     
 }

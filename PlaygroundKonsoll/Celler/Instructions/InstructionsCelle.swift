@@ -14,7 +14,7 @@ class InstructionsCelle: UIView {
     
     @IBInspectable var link: (()->Void)?
     @IBInspectable var ikon: UIImage? = #imageLiteral(resourceName: "PKInstructsIcon")
-    @IBInspectable var stilmanager: CellstyleType? {
+    var stilmanager: CellstyleType? {
         didSet {
             stilmanager?.style(label: label)
             image.tintColor = stilmanager?.temafarge ?? .blue

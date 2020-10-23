@@ -23,7 +23,7 @@ class InstructCelle: UIView {
             label.text = text
         }
     }
-    @IBInspectable var stilmanager: CellstyleType? {
+    var stilmanager: CellstyleType? {
         didSet {
             stilmanager?.style(label: label)
             image.tintColor = stilmanager?.temafarge ?? .blue

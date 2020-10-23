@@ -7,10 +7,10 @@
 
 import UIKit
 
-@objc protocol CellstyleType {
+protocol CellstyleType {
     func style(label: UILabel)
     func style(backg: UIView)
-    func prefix() -> UIView?
+    func prefix() -> PrefixView?
     func height() -> CGFloat
     
     var temafarge: UIColor {get}
@@ -20,10 +20,42 @@ import UIKit
     init()
 }
 
+protocol PrefixView {
+    var view: UIView {get}
+    func endreFarge(_ farge: UIColor)
+}
+
+struct PrefixViewBlock: PrefixView {
+    var view: UIView
+    
+    func endreFarge(_ farge: UIColor) {
+        view.backgroundColor = farge
+    }
+    
+    init(view: UIView) {
+        self.view = view
+    }
+}
+
+struct PrefixViewLabel: PrefixView {
+    var view: UIView
+    
+    func endreFarge(_ farge: UIColor) {
+        (view as! UILabel).textColor = farge
+    }
+    
+    init(label: UILabel) {
+        self.view = label
+    }
+    
+}
+
+
 fileprivate func consoledisplayStyle(forLabel label: UILabel, color: UIColor, backcolor: UIColor) {
-    label.layer.shadowColor = color.cgColor
+    //Uncomment for a preformance mess.
+    /*label.layer.shadowColor = color.cgColor
     label.layer.shadowRadius = 2
-    label.layer.shadowOpacity = 0.4
+    label.layer.shadowOpacity = 0.4*/
 }
 
 //Traditional
@@ -33,12 +65,12 @@ class TraditionalCellstyle: CellstyleType {
     let temafarge = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
     let temafont = UIFont.monospacedSystemFont(ofSize: 17, weight: .regular)
     
-    func prefix() -> UIView? {
+    func prefix() -> PrefixView? {
         let labb = UILabel()
         labb.text = ">"
         labb.textColor = temafarge
         labb.font = temafont
-        return labb
+        return PrefixViewLabel(label: labb)
     }
     
     func style(label: UILabel) {
@@ -65,7 +97,7 @@ class CleanCellstyle: CellstyleType {
     let temafarge = UIColor.white
     let temafont = UIFont.systemFont(ofSize: 17, weight: .regular)
     
-    func prefix() -> UIView? {
+    func prefix() -> PrefixView? {
         return nil
     }
     
@@ -93,12 +125,12 @@ class FuturisticCellstyle: CellstyleType {
     let temafarge = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
     let temafont = UIFont(name: "Futura", size: 17)!
     
-    func prefix() -> UIView? {
+    func prefix() -> PrefixView? {
         let view = UIView()
         view.backgroundColor = temafarge
         view.layer.cornerRadius = 1.25
         view.widthAnchor.constraint(equalToConstant: 4).isActive = YES
-        return view
+        return PrefixViewBlock(view: view)
     }
     
     func style(label: UILabel) {
@@ -124,12 +156,12 @@ class HackerCellstyle: CellstyleType {
     let temafarge = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
     let temafont = UIFont.monospacedSystemFont(ofSize: 17, weight: .regular)
     
-    func prefix() -> UIView? {
+    func prefix() -> PrefixView? {
         let labb = UILabel()
         labb.text = "_"
         labb.textColor = temafarge
         labb.font = temafont
-        return labb
+        return PrefixViewLabel(label: labb)
     }
     
     func style(label: UILabel) {
