@@ -36,6 +36,7 @@
 		DAA4BE31253BABAA00B953F7 /* LanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA4BE2C253BABAA00B953F7 /* LanguageManager.m */; };
 		DAA4BE32253BABAA00B953F7 /* NSBundle+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA4BE2D253BABAA00B953F7 /* NSBundle+Language.m */; };
 		DAA4BE39253BABE400B953F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAA4BE3B253BABE400B953F7 /* Localizable.strings */; };
+		DAE35387254383B10020958E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE35389254383B10020958E /* InfoPlist.strings */; };
 		DAF45083252B9AE4002B6E34 /* Cellstyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF45082252B9AE4002B6E34 /* Cellstyle.swift */; };
 		DAF4509A252BD046002B6E34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF45099252BD046002B6E34 /* main.m */; };
 		DAF450BA252BE473002B6E34 /* PPrintSenderObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF450B9252BE473002B6E34 /* PPrintSenderObjc.m */; };
@@ -134,6 +135,9 @@
 		DAA4BE3A253BABE400B953F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAA4BE3C253BABE800B953F7 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAA4BE3D253BABE900B953F7 /* nn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nn; path = nn.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DAE35388254383B10020958E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DAE3538C254383B20020958E /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DAE3538F254383B30020958E /* nn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nn; path = nn.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DAF45082252B9AE4002B6E34 /* Cellstyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cellstyle.swift; sourceTree = "<group>"; };
 		DAF45097252BD046002B6E34 /* pkontool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pkontool; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF45099252BD046002B6E34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -342,6 +346,7 @@
 				DAF554B524CE10A100454C1C /* LaunchScreen.storyboard */,
 				DAF554B824CE10A100454C1C /* Info.plist */,
 				DAA4BE3B253BABE400B953F7 /* Localizable.strings */,
+				DAE35389254383B10020958E /* InfoPlist.strings */,
 			);
 			path = PlaygroundKonsoll;
 			sourceTree = "<group>";
@@ -506,6 +511,7 @@
 				DAF450D4252D24B1002B6E34 /* InstructionsKontroller.xib in Resources */,
 				DAA4BE0E253B9A3D00B953F7 /* SettingsKontroller.xib in Resources */,
 				DAA4BE39253BABE400B953F7 /* Localizable.strings in Resources */,
+				DAE35387254383B10020958E /* InfoPlist.strings in Resources */,
 				DA15E872252DC0C100078EC1 /* CCodePKInstruct2.jpg in Resources */,
 				DAF554C324CE10F100454C1C /* KonsollKontroller.xib in Resources */,
 				DAF554C924CE114500454C1C /* PrintCelle.xib in Resources */,
@@ -587,6 +593,16 @@
 				DAA4BE3D253BABE900B953F7 /* nn */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		DAE35389254383B10020958E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAE35388254383B10020958E /* en */,
+				DAE3538C254383B20020958E /* nb */,
+				DAE3538F254383B30020958E /* nn */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		DAF554B524CE10A100454C1C /* LaunchScreen.storyboard */ = {

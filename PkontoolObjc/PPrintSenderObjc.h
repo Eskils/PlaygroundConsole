@@ -18,7 +18,8 @@
 @end
 
 @interface Kommando : NSObject <Sendable>
-- (instancetype)init:(int)cmd;
+@property NSInteger kommando;
+- (instancetype)init:(NSInteger)cmd;
 - (NSData*) enkodMelding;
 
 @end

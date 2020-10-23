@@ -41,6 +41,11 @@ public struct TjenarResponsHandler {
     }
 }
 
+public enum Tjenarfeil: Error {
+    case kjøyrerAllereie
+    case ukjend
+}
+
 public class Tjenar {
     
     private static let transportMetode = SOCK_STREAM
@@ -50,7 +55,10 @@ public class Tjenar {
     
     public var responsHandler: TjenarResponsHandler?
     public var isRunning: Bool = false
-    public var url: URL {
+    public var error: Tjenarfeil?
+    public var url: URL? {
+        
+        if !isRunning { return nil }
         
         var grensesnitt: UnsafeMutablePointer<ifaddrs>? = nil
         getifaddrs(&grensesnitt)
@@ -144,8 +152,10 @@ public class Tjenar {
         return res
     }
 
-    public func start(port: UInt16? = nil) {
-        if sock != nil { print("Kunne ikkje starte tjenar grunna med at ein socket allereie lyttar."); return }
+    ///Starts the server on specified port. When the server is up and running, the handler is called with a bool as a parameter to indicate whether the setup was successful — which for the case if not, the error will be set to the instance-property `error`.
+    public func start(port: UInt16? = nil, handler: @escaping (Bool)->Void) {
+        self.error = nil
+        if sock != nil { print("Kunne ikkje starte tjenar grunna med at ein socket allereie lyttar."); self.error = .kjøyrerAllereie; return }
         self.sock = socket(Tjenar.internetProtocoll, Tjenar.transportMetode, 0)
         let port = port ?? 80
         self.socketPort = port
@@ -157,22 +167,37 @@ public class Tjenar {
         address.sin_addr = in_addr(s_addr: in_addr_t(0))
         address.sin_zero = (0, 0, 0, 0, 0, 0, 0, 0)
         
-        var pntr: Int32 = 1
-        setsockopt(self.sock!, SOL_SOCKET, SO_REUSEADDR, &pntr, socklen_t(MemoryLayout<Int>.size))
+        var pntr2: Int32 = 1
+        setsockopt(self.sock!, SOL_SOCKET, SO_REUSEADDR, &pntr2, socklen_t(MemoryLayout<Int>.size))
         
-        withUnsafePointer(to: &address) { (pointAddress) in
+        let res = withUnsafePointer(to: &address) { (pointAddress) -> Bool in
             let pntr = UnsafeRawPointer(pointAddress).assumingMemoryBound(to: sockaddr.self)
             let bindres = bind(sock!, pntr, socklen_t(socklen))
+            
             if bindres == -1 {
                 print("Kunne ikkje binde adresse, feil: ", String(cString: strerror(errno)), errno)
+                if errno == 48 {
+                    self.error = .kjøyrerAllereie
+                } else {
+                    self.error = .ukjend
+                }
                 self.isRunning = false
-                return
+                return false
             }
+            
+            return true
+        }
+        
+        if !res {
+            handler(false)
+            return
         }
         
         Tjenar.kø.async { [self] in
-            let listres = listen(sock!, 5)
+            listen(sock!, 5)
             self.isRunning = true
+            
+            handler(true)
             
             print("Tjenar lyttar på port \(port)")
             

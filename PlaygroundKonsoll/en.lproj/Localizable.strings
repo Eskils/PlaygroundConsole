@@ -32,3 +32,5 @@
 
 "Start appen på nytt for endringane til å tre i kraft" = "Restart the app for the changes to take effect.";
 "Ok" = "Okey";
+
+"Kunne ikkje starte. Kanskje ein tjenar allereie kjøyrer?" = "Could not start. Perhaps a server is already running.";

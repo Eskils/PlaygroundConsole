@@ -55,7 +55,7 @@ public class PPMotakar {
     func lagWebtjenar() {
         webTjenar = Tjenar()
         webTjenar.responsHandler = TjenarResponsHandler(svar: { (data) -> String in
-            guard let data = data else { return "Ingen data." }
+            guard let data = data else { return "No data." }
             if let melding = self.dekodMelding(data: data, type: Melding.self) {
                 self.abbonentar.forEach { $0.mottokMelding(melding: melding) }
                 return "Mtk: \(melding.id)"
@@ -63,17 +63,19 @@ public class PPMotakar {
                 self.abbonentar.forEach { $0.mottokKommando(kommando: kommando) }   
                 return "MtkCmd: \(kommando.rawValue)"
             }
-            return "Kunne ikkje dekode melding. Du må lage ein POST-request med meldingen som data i http-bodyen enkoda med UTF-8."
+            return "Could not decode message. The data needs to be encoded using UTF-8, and sent in the body of a POST-request."
         })
     }
     
     
-    public func startAvlytting() -> URL? {
-        if webTjenar.isRunning { return webTjenar.url }
-        webTjenar.start()
-        //webTjenar.start(withPort: 8080, bonjourName: "PlaygroundKonsoll")
-        
-        return webTjenar.url
+    public func startAvlytting(fullføring: @escaping (URL?)->Void) {
+        if webTjenar.isRunning { fullføring(webTjenar.url) ;return }
+        webTjenar.start() { (success) in
+            if !success {
+                print("Error med start webTjenar, ", self.webTjenar.error)
+            }
+            fullføring(self.webTjenar.url)
+        }
     }
     
     public func avsluttAvlytting() {

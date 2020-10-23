@@ -17,20 +17,22 @@
 
 @implementation Kommando
 
-NSString *kommando;
+NSInteger kommando;
 
-- (instancetype)init:(int)cmd
+- (instancetype)init:(NSInteger)cmd
 {
     self = [super init];
     if (self) {
         NSArray * cmds = @[@"tøm", @"skrollingPå", @"skrollingAv", @"forfriskTema"];
-        kommando = cmds[cmd];
+        self.kommando = cmd;
     }
     return self;
 }
 
 - (NSData *)enkodMelding {
-    return [[NSString stringWithFormat:@"\"%@\"", kommando] dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
+    //printf(self.kommando);
+    NSString* data = [NSString stringWithFormat:@"%ld", self.kommando];
+    return [data dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
 }
 
 @end

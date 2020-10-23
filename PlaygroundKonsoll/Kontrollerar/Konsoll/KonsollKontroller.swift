@@ -149,8 +149,10 @@ class KonsollKontroller: UIViewController, PPMotakarDelegat {
     
     var status: Konsollstatus = .Inaktiv {
         didSet {
-            statusLabel.text = self.status.rawValue.localized
-            startKonsollKnapp.isOn = self.status.isOn
+            DispatchQueue.main.async { [self] in
+                statusLabel.text = self.status.rawValue.localized
+                startKonsollKnapp.isOn = self.status.isOn
+            }
         }
     }
     
@@ -334,11 +336,15 @@ class KonsollKontroller: UIViewController, PPMotakarDelegat {
                 disableTable()
             case .Inaktiv:
                 //START
-                guard let url = mottakar.startAvlytting() else { statusLabel.text = "Kunne ikkje starte. Kanskje ein tjenar allereie kjøyrer?"; return }
                 status = .Aktiv
                 activateTable()
-                avsendar = PPAvsendar(url: url)
-                statusLabel.text = "\("Konsoll aktiv på".localized) \(url.absoluteString)"
+                mottakar.startAvlytting { [self] (u) in
+                    DispatchQueue.main.async {
+                        guard let url = u else { statusLabel.text = "Kunne ikkje starte. Kanskje ein tjenar allereie kjøyrer?".localized; return }
+                        avsendar = PPAvsendar(url: url)
+                        statusLabel.text = "\("Konsoll aktiv på".localized) \(url.absoluteString)"
+                    }
+                }
         }
     }
     

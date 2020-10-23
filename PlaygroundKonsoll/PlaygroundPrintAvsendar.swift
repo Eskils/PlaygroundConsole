@@ -8,8 +8,11 @@ protocol Sendable: Codable {
     func enkodMelding() -> Data
 }
 
-public enum KonsollKomando: String, Codable, Sendable {
-    case tøm, skrollingPå, skrollingAv, forfriskTema
+public enum KonsollKomando: Int, Codable, Sendable {
+    case tøm
+    case skrollingPå
+    case skrollingAv
+    case forfriskTema
     
     func enkodMelding() -> Data {
         let koda = try! JSONEncoder().encode(self)
